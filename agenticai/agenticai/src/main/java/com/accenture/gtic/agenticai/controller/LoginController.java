@@ -32,9 +32,12 @@ public class LoginController {
         String userType = authService.getUserType(userDetail.getUsername());
         return ResponseEntity.ok(Map.of("message", "Login successful", "userType", userType));
     }
-
     @PostMapping("/submitAgentForm")
     public ResponseEntity<?> submitAgentForm(@RequestBody AgentRegistrationDTO userForm) {
+        if (userForm.getPassword() == null || userForm.getPassword().isEmpty()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Password is required");
+        }
+
         agentService.registerAgent(userForm);
         return ResponseEntity.ok("Agent registered successfully");
     }

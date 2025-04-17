@@ -4,6 +4,25 @@ public class AgentRegistrationDTO {
     private String emailId;
     private String PINCode;
     private String aadharNumber;
+    private String password;
+    private String setPassword;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getSetPassword() {
+        return setPassword;
+    }
+
+    public void setSetPassword(String setPassword) {
+        this.setPassword = setPassword;
+    }
+
     private BankDetailsDTO bankDetails;
 
     public String getAgentName() {
@@ -40,4 +59,5 @@ public class AgentRegistrationDTO {
     public void setBankDetails(BankDetailsDTO bankDetails) {
         this.bankDetails = bankDetails;
     }
+
 }

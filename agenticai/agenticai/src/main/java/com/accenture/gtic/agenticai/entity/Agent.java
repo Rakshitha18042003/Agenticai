@@ -12,6 +12,15 @@ public class Agent {
         private String emailId;
         private String PINCode;
         private String aadharNumber;
+        private String setPassword;
+
+        public String getSetPassword() {
+                return setPassword;
+        }
+
+        public void setSetPassword(String setPassword) {
+                this.setPassword = setPassword;
+        }
 
         public Long getId() {
                 return id;
@@ -63,5 +72,8 @@ public class Agent {
 
         @OneToOne(cascade = CascadeType.ALL)
         private BankDetails bankDetails;
-    }
+
+        public void setPassword(String password) {
+        }
+}
 
